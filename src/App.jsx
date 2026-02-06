@@ -8,17 +8,23 @@ import Players from './components/Tictactoe/Players.jsx'
 import GameBoard from './components/Tictactoe/GameBoard.jsx'
 import Logs from './components/Tictactoe/Logs.jsx'
 
+function deriveActivePlayer(turns) {
+  let currentPlayer = "X";
+  if (turns.length > 0 && turns[0].player === "X") {
+    currentPlayer = "O";
+  }
+  return currentPlayer;
+
+}
+
 function App() {
   const [gameTurns, setGameTurns] = useState([]);
-  const [activePlayer, setActivePlayer] = useState('X');
+  const activePlayer = deriveActivePlayer(gameTurns);
   function handleSelectSquare(rowIndex, colIndex) {
     setActivePlayer((previousPlayer) => (previousPlayer === 'X' ? 'O' : 'X'));
     setGameTurns(
       (prevousTurns) => {
-        let currentPlayer = "X";
-        if (prevousTurns.length > 0 && prevousTurns[0].player === "X") {
-          currentPlayer = "O";
-        }
+        currentPlayer = deriveActivePlayer(prevousTurns);
         const updatedTurns = [{ square: { row: rowIndex, col: colIndex }, player: currentPlayer }, ...prevousTurns];
         return updatedTurns;
       });
@@ -51,7 +57,7 @@ function App() {
             </div>
           </div>
         </div>
-        <Logs />
+        <Logs turns={gameTurns} />
       </main>
     </>
   )

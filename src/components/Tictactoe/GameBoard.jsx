@@ -5,6 +5,11 @@ const initialGameBoard = [
 ];
 
 export default function GameBoard({ onSelectSquare, turns }) {
+    let gameBoard = initialGameBoard;
+    turns.forEach((turn) => {
+        const { row, col } = turn.square;
+        gameBoard[row][col] = turn.player;
+    });
     // const [gameBoard, setGameBoard] = useState(initialGameBoard);
 
     // function handleSelectSquare(rowIndex, colIndex) {
