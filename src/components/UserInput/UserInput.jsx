@@ -20,15 +20,15 @@ export default function UserInput() {
     return (
         <section id="user-input" className="row">
             <div className="col-6 mb-3">
-                <label className="form-label" htmlFor="initial-investment">Initial Investment</label>
+                <label className="form-label" htmlFor="initialInvestment">Initial Investment</label>
                 <input type="number" onChange={handleInputChange} value={userInput.initialInvestment} required name="initialInvestment" className="form-control" placeholder="Initial Investment Amount" />
             </div>
             <div className="col-6 mb-3">
-                <label className="form-label" htmlFor="annual-contribution">Annual Contribution</label>
+                <label className="form-label" htmlFor="annualContribution">Annual Contribution</label>
                 <input type="number" onChange={handleInputChange} value={userInput.annualContribution} required name="annualContribution" className="form-control" placeholder="Annual Contribution Amount" />
             </div>
             <div className="col-6 mb-3">
-                <label className="form-label" htmlFor="expected-return">Expected Return</label>
+                <label className="form-label" htmlFor="expectedReturn">Expected Return</label>
                 <input type="number" onChange={handleInputChange} value={userInput.expectedReturn} required name="expectedReturn" className="form-control" placeholder="Expected Return Percentage" />
             </div>
             <div className="col-6 mb-3">
