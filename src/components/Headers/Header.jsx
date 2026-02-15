@@ -2,8 +2,11 @@
 export default function Header() {
     return (
         <header className="header">
-            <img src="/images/calculator-logo.png" alt="logo" className="header-logo" />
-            <h1 className="header-title">Investment Calculator</h1>
+            <div className="row justify-content-center">
+                <div className="col-md-2">
+                    <img width="140px" src="/images/calculator-logo.png" alt="logo" className="header-logo" />
+                </div>
+            </div>
         </header>
     )
 }
